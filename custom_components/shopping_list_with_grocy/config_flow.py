@@ -62,10 +62,10 @@ class ShoppingListWithGrocyOptionsConfigFlow(config_entries.OptionsFlow):  # typ
                     vol.Required(
                         "mqtt_port", default=self.options.get("mqtt_port", 1883)
                     ): vol.All(cv.port, vol.In([1883, 1884, 8883, 8884, 1])),
-                    vol.Required(
+                    vol.Optional(
                         "mqtt_username", default=self.options.get("mqtt_username")
                     ): cv.string,
-                    vol.Required(
+                    vol.Optional(
                         "mqtt_password", default=self.options.get("mqtt_password")
                     ): cv.string,
                     vol.Optional(
