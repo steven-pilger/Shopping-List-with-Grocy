@@ -160,8 +160,8 @@ class ShoppingListWithGrocyConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     vol.Required("mqtt_port", default=1883): vol.All(
                         cv.port, vol.In([1883, 1884, 8883, 8884, 1])
                     ),
-                    vol.Required("mqtt_username"): cv.string,
-                    vol.Required("mqtt_password"): cv.string,
+                    vol.Optional("mqtt_username"): cv.string,
+                    vol.Optional("mqtt_password"): cv.string,
                     vol.Optional(
                         "image_download_size",
                         default=100,
